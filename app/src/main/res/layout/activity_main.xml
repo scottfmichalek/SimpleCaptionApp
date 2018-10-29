@@ -17,7 +17,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/island"
         android:contentDescription="@string/island"
-        android:onClick="onTouchMainSquare"
+        android:onClick="onTouchImage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.544"
@@ -25,15 +25,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.582" />
 
-    <TextView
-        android:id="@+id/captionTextView"
+    <LinearLayout
+        android:id="@+id/captionLayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:textColor="@color/colorPrimaryDark"
+        android:orientation="vertical"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@android:drawable/ic_menu_edit"
+            android:onClick="onTouchButton"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteY="511dp" />
+
+        <TextView
+            android:id="@+id/captionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:onClick="onTouchCaption"
+            android:textColor="@color/TextColor"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
